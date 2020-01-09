@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div>Who are the current astronauts?</div>
+        <script>
+            fetch('http://api.open-notify.org/astros.json') // fetch asks for a file/URL from a server
+            .then(res => res.json()) // this returns the response/requested file
+            .then(data => alert(JSON.stringify(data))) // this converts the data into a string
+            .catch(error => alert(`Error`)) // catch handles any error(s) that occur
+        </script>
+        <div>What is the ISS' current location over Earth?</div>
+        <script>
+            fetch('http://api.open-notify.org/iss-now.json')
+            .then(res => res.json())
+            .then(data => alert(JSON.stringify(data)))
+            .catch(error => alert('Something went wrong!'))
+        </script>
+    </body>
+</html>
